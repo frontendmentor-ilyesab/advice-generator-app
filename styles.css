@@ -1,0 +1,159 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+/* CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin and padding
+  */
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+/* CSS Custom Properties */
+:root {
+    /* Primary Colors */
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+
+    /* Neutral Colors */
+    --gray-blue: hsl(217, 19%, 38%);
+    --dark-gray-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+/* Styling Top to Bottom */
+
+html {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+body {
+    --body-margin-inline: 1rem;
+    background-color: var(--dark-blue);
+    margin: 30% var(--body-margin-inline) 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: start stretch;
+}
+
+main {
+    --main-padding-inline: 1rem;
+    background-color: var(--dark-gray-blue);
+    border-radius: 0.75rem;
+    text-align: center;
+    padding: 3rem var(--main-padding-inline) 4.5rem;
+    display: grid;
+    gap: 2rem;
+    place-items: center;
+    position: relative;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.advice_id {
+    color: var(--neon-green);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.advice {
+    color: var(--light-cyan);
+    font-size: 1.5rem;
+}
+
+.dice_button {
+    --padding: 1.3rem;
+    --svg-width-and-height: 24px;
+    border: none;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    padding: var(--padding);
+    position: absolute;
+    width: calc(var(--svg-width-and-height) + 2 * var(--padding));
+    height: calc(var(--svg-width-and-height) + 2 * var(--padding));
+    left: 50%;
+    bottom: calc( calc(var(--svg-width-and-height) + 2 * var(--padding)) * -1 );
+    transform: translate(-50%, -50%);
+}
+
+/* Interactive States */
+.dice_button:hover, .dice_button:focus, .dice_button:active {
+  box-shadow: 0px 0px 2rem 0px var(--neon-green);
+}
+
+/* @media screen and (min-width: 576px) {
+  body {
+    place-items: center;
+    margin: 0;
+  }  
+} */
+
+@media screen and (min-width: 992px) {
+    body {
+        display: grid;
+        place-items: center;
+        margin: 0;
+    }
+    main {
+        --main-padding-inline: 2.75rem;
+    }
+    .advice {
+      font-size: 1.75rem;
+    }
+}
